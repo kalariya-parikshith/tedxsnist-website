@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head >
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="sty.css">
+<style>
+body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 100%;
+}
+
+li{
+  padding-top: 10px;
+  float: left;
+}
+
+
+.nav_a {
+  padding: 14px 16px;
+    display: block;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    font-family:arial;
+    font-size:15px
+}
+
+.nav_a:hover:not(.active) {
+    background-color: red;
+    color: #fff;
+
+}
+.navli{
+  padding-top: 30px;
+}
+.navlink{
+  float: right;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 16px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.bgimg-1,.bgimg-2{
+  position: relative;
+  opacity: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("whatisted5.jpg");
+  min-height: 70%;
+}
+.bgimg-2 {
+  background-image: url("snist6.jpg");
+  min-height: 100%;
+}
+
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+.topnav {
+  
+}
+
+.topnav a {
+  background-color: transparent;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 1240px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    padding-top: 29px;
+    float: left;
+    display: inline;
+  }
+  .navbar a {
+  float: left;
+  display: none;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 5px;
+  text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+li a {
+  background-color: #fff;
+    display: inline;
+    color: #000;
+    padding: 0px 0px;
+    text-decoration: none;
+}
+}
+@media screen and (max-width: 1240px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+
+    position: fixed;
+  }
+  .topnav.responsive a {
+    float: left;
+    display: inline-block;
+    text-align: right;
+    background-color: #000;
+  }
+ 
+
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 13%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    background-color: black;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+    background-color: red;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    font-size: 60px;
+    background-color: transparent;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 10px;
+  }
+}
+nav ul{
+	padding-left:10px;
+}
+.activated{
+	background-color:red;
+}
+</style>
+</head>
+<body style="background-color:Black;">
+  
+<div class="w3-top">
+  <div class="navbar">
+  <div class="w3-bar w3-black">
+  <div class="topnav" id="myTopnav">
+    <center style="color:#fff;font-family:arial;font-size:50px;vertical-align:center"><span style="color:red"><b>TED</b></span><sup style="font-size:35px;color:red"><b>x</b></sup>SNIST</center>
+    <center style="color:#fff;font-family:arial"><sup><sup><sup style="font-size:15px;"><span style="color:red">x </span>= independently organized TED event</sup></sup></sup></center>
+    <header class="navigation">
+    <nav>
+    <ul >
+  <li class="navli"><a href="home.html" class="nav_a activated">Home</a></li>
+  <li class="navli"><a href="event.html" class="nav_a">Event</a></li>
+  <li class="navli"><a href="speaker.html"  class="nav_a">Speaker</a></li>
+  <li class="navli"><a href="Sponsers.html" class="nav_a">Sponsors</a></li>
+  <li class="navli"><a href="aboutus.html"   class="nav_a">About Us</a></li>
+  <li class="navli"><a href="contact.html"   class="nav_a">Contact Us</a></li>
+  <li><a href="javascript:void(0);" style="font-size:20px;" class="icon"><span style="cursor:pointer;padding-left:10px;" onclick="openNav()">&#9776;</span></a></li>
+  <div class="w3-xlarge w3-section">
+  <li class="navlink" >
+    <a href="https://www.facebook.com/tedxsnist/"><img src="fb_black.png" onmouseover="this.src='fb_red.png'"
+onmouseout="this.src='fb_black.png'" border="0" alt="" style="width:40px;"></a>
+  </li>
+  <li class="navlink" >
+    <a href="https://www.instagram.com/tedxsnist/"><img src="insta_black.png" onmouseover="this.src='insta_red.png'"
+onmouseout="this.src='insta_black.png'" border="0" alt="" style="width:40px;"></a>
+  </li>
+  <li class="navlink" >
+    <a href="https://twitter.com/tedxsnist?s=09"><img src="twit_black.png" onmouseover="this.src='twit_red.png'"
+onmouseout="this.src='twit_black.png'" border="0" alt="" style="width:40px;"></a>
+  </li>
+</div>
+</ul>
+</nav>
+  </header>
+  </div>
+</div>
+</div>
+</div>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="home.html">Home</a>
+	<a href="event.html">Event</a>
+    <a href="speaker.html">Speakers</a>
+    <a href="Sponsers.html">Sponsers</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</div>
+<br><br><br><br>
+<div id="home1" >
+<div class="w3-content w3-section" style="max-width:2000px;max-height:500px">
+  
+
+  <img class="mySlides w3-animate-fading" src="tedxposter.png" style="width:100%;height:500px">
+  <img class="mySlides w3-animate-fading" src="snist4.jpg" style="width:90%;height:600px;margin-left:auto;margin-right:auto">
+  
+  
+</div>
+</div>
+
+<br><br><br>
+<div style="background-color:white;">
+<div  class="bgimg-1">
+  <div style="color: #000;text-align:center;text-align: justify;">
+  <h3 style="text-align:center;padding:70px 100px;font-size:50px;color:red">What is TED?</h3>
+  <p style="padding:0px 100px;font-size:20px;color:white">TED is a non-profit organization devoted to Ideas Worth Spreading. Started as a four-day conference in California 30 years ago, TED has grown to support its mission with multiple initiatives. The annual TED Conference takes place each spring in Vancouver, British Columbia.<br>
+	  TED speakers have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan Nilekani,Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and Daniel Kahneman.
+
+
+</p>
+<br>
+</div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;color:black">
+  <h3 style="text-align:center;font-size:35px;color:red">What is TED<sup style="font-size:23px">x</sup>?</h3>
+  <p><center style="font-size:20px">x=independently organized event.</center></p>
+  <p style="font-size:18px;">In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. </p>
+</div>
+
+<div class="bgimg-2">
+  <div style="text-align:center;text-align: justify;color: #cee;">
+  <h3 style="text-align:center;padding:70px 100px;font-size:50px;color:white;color:red">What is TED<sup style="font-size:30px">x</sup>SNIST?</h3>
+  <p style="padding:0px 100px;font-size:20px;color:white"> At our event TEDxSNIST, the videos of TED talks will combine with speakers on live,to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.<br>
+	  <center><a href="https://www.ted.com/tedx/events/23395">Glimpse of our event in ted.com</a> </center>
+
+</p>
+<br>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home1" class="w3-button w3-light-grey">To the top &#8593;</a>
+  
+<nav class="navbar navbar-default navbar-fixed-bottom" style="background-color:black">
+
+  <p>&#169 TEDxSNIST</p>
+  <p>This independent TEDx event is operated under license from TED</p>
+  <p>Developed by 
+  <font color="red">Parikshith Kalariya </font>and <font color="red"> Sai Lakshmi Yadlapati</font></p>
+</nav>
+</div>
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "50%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+</body>
+</html>
